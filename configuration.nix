@@ -186,6 +186,7 @@
       unzip
       unrar
       protonplus
+      gh
    ];
 
   #garbage collection
