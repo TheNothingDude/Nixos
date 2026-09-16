@@ -190,6 +190,7 @@
       #dotnet stuff
       dotnetCorePackages.sdk_8_0
       jetbrains.rider
+      mono
    ];
 
   #garbage collection
