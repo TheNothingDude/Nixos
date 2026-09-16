@@ -187,7 +187,9 @@
       unrar
       protonplus
       gh
+      #dotnet stuff
       dotnetCorePackages.sdk_8_0
+      jetbrains.rider
    ];
 
   #garbage collection
