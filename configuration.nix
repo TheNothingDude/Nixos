@@ -164,6 +164,7 @@
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
       "\${HOME}/.steam/root/compatibilitytools.d";
     SDL_VIDEODRIVER = "wayland";
+    DOTNET_ROOT = "${pkgs.dotnetCorePackages.sdk_8_0}";
   };
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -179,7 +180,6 @@
       vesktop
       fastfetch
       mangohud
-      protonup-ng
       prismlauncher
       qbittorrent
       thunar
@@ -187,6 +187,7 @@
       unrar
       protonplus
       gh
+      dotnetCorePackages.sdk_8_0
    ];
 
   #garbage collection
