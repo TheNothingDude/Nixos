@@ -73,7 +73,7 @@
   services.displayManager.gdm.enable = true;
   
   #Niri
-  services.displayManager.defaultSession = "hyprland-uwsm";
+  services.displayManager.defaultSession = "niri";
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
