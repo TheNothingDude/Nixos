@@ -15,11 +15,6 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
-
-  programs.discord = {
-    enable = true;
-    settings.SKIP_HOST_UPDATE = true;
-  };
   gtk = {
     enable = true;
     theme = {
@@ -40,9 +35,6 @@
   };
 
   #Required session variables to prevent broken textures/missing assets
-  home.sessionVariables = {
-    QT_QPA_PLATFORMTHEME = "gtk3";
-  };
 
   xdg = {
     enable = true;
@@ -71,6 +63,7 @@
   # Explicitly tell CLI tools and wrappers to launch Vivaldi
   home.sessionVariables = {
     BROWSER = "vivaldi-stable";
+    QT_QPA_PLATFORMTHEME = "gtk3";
   };
 
   #cursor
@@ -84,8 +77,18 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    pkgs.betterdiscordctl
+  home.packages = with pkgs; [
+      vivaldi
+      vscode
+      ghostty
+      vesktop
+      qbittorrent
+      thunar
+      prismlauncher
+      faugus-launcher
+      jetbrains.rider
+      dotnet-sdk_8 # Cleaner alias than dotnetCorePackages.sdk_8_0
+      mono
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -135,9 +138,6 @@
   #
   #  /etc/profiles/per-user/helium/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

@@ -100,7 +100,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Define a user account. Don't forget to set a password with ‘passwd’.
   #kernels
   nixpkgs.overlays = [
@@ -169,33 +168,22 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
    environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       xwayland-satellite
-      vivaldi
-      vscode
-      ghostty
-      faugus-launcher
-      vesktop
       fastfetch
       mangohud
-      prismlauncher
-      qbittorrent
-      thunar
+      protonplus
+      vim
+      git
+      gh
       unzip
       unrar
-      protonplus
-      gh
-      #dotnet stuff
-      dotnetCorePackages.sdk_8_0
-      jetbrains.rider
-      mono
    ];
 
   #garbage collection
    nix.settings = {
       auto-optimise-store = true; # Automatically hardlinks identical files in the nix store to save disk space
+      experimental-features = [ "nix-command" "flakes" ];
     };
   nix.gc = {
     automatic = true;
