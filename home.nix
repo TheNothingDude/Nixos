@@ -53,8 +53,6 @@
         "x-scheme-handler/https" = [ "vivaldi-stable.desktop" ];
         "x-scheme-handler/about" = [ "vivaldi-stable.desktop" ];
         "x-scheme-handler/unknown" = [ "vivaldi-stable.desktop" ];
-
-        # File Manager defaults (Replace thunar with your choice if different)
         "inode/directory" = [ "thunar.desktop" ];
       };
     };
@@ -63,7 +61,7 @@
   # Explicitly tell CLI tools and wrappers to launch Vivaldi
   home.sessionVariables = {
     BROWSER = "vivaldi-stable";
-    QT_QPA_PLATFORMTHEME = "gtk3";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
   };
 
   #cursor
@@ -78,6 +76,7 @@
   # environment.
   programs.fzf.enable = true;
   home.packages = with pkgs; [
+      mate-polkit
       vivaldi
       vscode
       ghostty
@@ -87,7 +86,7 @@
       prismlauncher
       faugus-launcher
       jetbrains.rider
-      dotnet-sdk_8 # Cleaner alias than dotnetCorePackages.sdk_8_0
+      dotnet-sdk_8
       mono
       xdg-user-dirs
       xdg-user-dirs-gtk

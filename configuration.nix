@@ -107,8 +107,7 @@
 
   # --- Programs & Features ---
   nixpkgs.config.allowUnfree = true;
-
-  programs.firefox.enable = true;
+  security.polkit.enable = true;
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
