@@ -74,7 +74,6 @@
   name = "oreo_spark_pink_cursors";
   size = 24; # Adjust size (e.g., 24, 32, 48) if needed
 };
-  programs.zsh.enable = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [

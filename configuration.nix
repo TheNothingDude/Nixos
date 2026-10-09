@@ -85,6 +85,7 @@
   users.users."helium" = {
     isNormalUser = true;
     description = "Helium";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
@@ -117,7 +118,7 @@
   programs.xwayland.enable = true;
   programs.git.enable = true;
   services.flatpak.enable = true;
-
+  programs.zsh.enable = true;
   # --- Environment Variables ---
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
