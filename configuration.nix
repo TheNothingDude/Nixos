@@ -79,6 +79,12 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      mesa.drivers
+    ];
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      mesa.drivers
+    ];
   };
   hardware.amdgpu.initrd.enable = true;
 
