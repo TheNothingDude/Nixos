@@ -64,7 +64,7 @@
     gdm.enable = true;
     defaultSession = "niri";
   };
-
+  programs.nix-crab.slssteam.enable = true;
   services.printing.enable = false;
 
   # Audio via PipeWire
@@ -124,11 +124,7 @@
     enable = true;
     gamescopeSession.enable = true;
   };
-   programs.nix-crab = {
-    millennium.enable = true;      # Client plugin/theme framework
-    luaTools.enable = true;        # Lua wrapper script injection 
-    slsSteam.enable = true;
-  };
+  
   programs.gamemode.enable = true;
   programs.niri.enable = true;
   programs.xwayland.enable = true;
