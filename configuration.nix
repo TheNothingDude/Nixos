@@ -83,13 +83,6 @@
   hardware.amdgpu.initrd.enable = true;
 
   # --- Kernel & Overlays ---
-  nixpkgs.overlays = [
-    (final: prev: {
-      steam = prev.steam.override {
-        extraArgs = "-cef-disable-gpu-compositing";
-      };
-    })
-  ];
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # --- Users ---
@@ -130,7 +123,7 @@
   programs.git.enable = true;
   services.flatpak.enable = true;
   programs.zsh.enable = true;
-  programs.nix-crab.slssteam-moon.enable = true
+  programs.nix-crab.slssteam-moon.enable = true;
   programs.nix-crab.millennium.enable = true; 
   # --- Environment Variables ---
   environment.sessionVariables = {
