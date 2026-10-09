@@ -90,7 +90,6 @@
         extraArgs = "-cef-disable-gpu-compositing";
       };
     })
-    inputs.nix-cachyos-kernel.overlays.pinned
   ];
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
