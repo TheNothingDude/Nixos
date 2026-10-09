@@ -124,6 +124,7 @@
     enable = true;
     gamescopeSession.enable = true;
   };
+  programs.nix-crab.slssteam-moon.enable = true;
   programs.gamemode.enable = true;
   programs.niri.enable = true;
   programs.xwayland.enable = true;
