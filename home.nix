@@ -76,7 +76,6 @@
   # environment.
   programs.fzf.enable = true;
   home.packages = with pkgs; [
-      mate-polkit
       vivaldi
       vscode
       ghostty
