@@ -17,7 +17,7 @@
     useOSProber = true;
     configurationLimit = 2; 
   };
-
+  services.fstrim.enable = true;
   # --- Networking ---
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
