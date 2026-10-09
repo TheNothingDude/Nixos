@@ -64,7 +64,6 @@
     gdm.enable = true;
     defaultSession = "niri";
   };
-  programs.nix-crab.slssteam.enable = true;
   services.printing.enable = false;
 
   # Audio via PipeWire
@@ -131,6 +130,8 @@
   programs.git.enable = true;
   services.flatpak.enable = true;
   programs.zsh.enable = true;
+  programs.nix-crab.slssteam-moon.enable = true
+  programs.nix-crab.millennium.enable = true; 
   # --- Environment Variables ---
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
