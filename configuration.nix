@@ -4,8 +4,8 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    inputs.nix-crab.nixosModules.default
   ];
-
   # --- Bootloader (GRUB) ---
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -123,6 +123,12 @@
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
+  };
+   programs.nix-crab = {
+    enable = true;
+    millennium.enable = true;      # Client plugin/theme framework
+    luaTools.enable = true;        # Lua wrapper script injection 
+    slsSteam.enable = true;
   };
   programs.gamemode.enable = true;
   programs.niri.enable = true;
