@@ -11,6 +11,7 @@
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
       };
+      nix-crab.url = "github:ItszFinn/nix-crab";
   };
 
 
