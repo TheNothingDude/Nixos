@@ -117,10 +117,6 @@
   # --- Programs & Features ---
   nixpkgs.config.allowUnfree = true;
   security.polkit.enable = true;
-  programs.steam = {
-    enable = true;
-  };
-  
   programs.gamemode.enable = true;
   programs.niri.enable = true;
   programs.xwayland.enable = true;
