@@ -121,6 +121,7 @@
   programs.niri.enable = true;
   programs.xwayland.enable = true;
   programs.git.enable = true;
+  programs.steam.enable = true;
   services.flatpak.enable = true;
   programs.zsh.enable = true;
   # --- Environment Variables ---
