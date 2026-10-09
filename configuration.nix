@@ -139,6 +139,7 @@
   # --- System Packages (CLI tools only) ---
   # GUI apps have been moved to home.nix
   environment.systemPackages = with pkgs; [
+    libnotify
     jq
     mate-polkit
     wget
