@@ -114,10 +114,6 @@
   };
   programs.gamemode.enable = true;
   programs.niri.enable = true;
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-  };
   programs.xwayland.enable = true;
   programs.git.enable = true;
   services.flatpak.enable = true;

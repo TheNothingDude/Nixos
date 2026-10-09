@@ -89,6 +89,8 @@
       jetbrains.rider
       dotnet-sdk_8 # Cleaner alias than dotnetCorePackages.sdk_8_0
       mono
+      xdg-user-dirs
+      xdg-user-dirs-gtk
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
