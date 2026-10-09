@@ -125,7 +125,6 @@
     gamescopeSession.enable = true;
   };
    programs.nix-crab = {
-    enable = true;
     millennium.enable = true;      # Client plugin/theme framework
     luaTools.enable = true;        # Lua wrapper script injection 
     slsSteam.enable = true;
