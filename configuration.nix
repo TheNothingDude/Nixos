@@ -4,7 +4,6 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    inputs.nix-crab.nixosModules.default
   ];
   # --- Bootloader (GRUB) ---
   boot.loader.systemd-boot.enable = false;
@@ -128,7 +127,6 @@
   programs.git.enable = true;
   services.flatpak.enable = true;
   programs.zsh.enable = true;
-  programs.nix-crab.slssteam-moon.enable = true;
   # --- Environment Variables ---
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
