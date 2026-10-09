@@ -1,14 +1,5 @@
 {
   description = "Nixos config flake";
-  
-  nixConfig = {
-    extra-substituters = [
-      "https://attic.xuyh0120.win/lantian"
-    ];
-    extra-trusted-public-keys = [
-      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
-    ];
-  };
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
       
@@ -20,9 +11,6 @@
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
       };
-    nix-cachyos-kernel = {
-        url = "github:xddxdd/nix-cachyos-kernel/release";
-    };  
   };
 
 
