@@ -30,7 +30,7 @@
   #Qt configuration for Noctalia compatibility
   qt = {
     enable = true;
-    platformTheme.name = "gtk3"; # Explicitly binds Qt back to the GTK layers
+    platformTheme.name = "qt6ct"; # Explicitly binds Qt back to the GTK layers
     style.name = "adwaita-dark"; 
   };
 
