@@ -18,6 +18,12 @@
     configurationLimit = 2; 
   };
   services.fstrim.enable = true;
+  zramSwap = {
+    enable = true;
+    memoryPercent = 50; # Maximum percentage of physical RAM to use for ZRAM
+    priority = 100;     # Swap priority (higher number means it is used first)
+    algorithm = "zstd"; # Compression algorithm (e.g., zstd, lz4, lzo)
+  };
   # --- Networking ---
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -136,7 +142,6 @@
     SDL_VIDEODRIVER = "wayland";
   };
 
-  # --- System Packages (CLI tools only) ---
   # GUI apps have been moved to home.nix
   environment.systemPackages = with pkgs; [
     nautilus
