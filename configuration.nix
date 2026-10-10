@@ -120,6 +120,7 @@
   programs.gamemode.enable = true;
   programs.niri.enable = true;
   programs.nautilus-open-any-terminal.enable = true;
+  services.gvfs.enable = true;
   programs.xwayland.enable = true;
   programs.git.enable = true;
   programs.steam.enable = true;
