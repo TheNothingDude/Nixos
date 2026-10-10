@@ -1,6 +1,12 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+
+  imports = [
+    inputs.nix-crab.homeModules.default
+  ];
+    programs.nix-crab.slssteam.manageConfig = false;
+    programs.nix-crab.luatools.enable = true;
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "helium";

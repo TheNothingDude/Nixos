@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    inputs.nix-crab.nixosModules.default
   ];
   # --- Bootloader (GRUB) ---
   boot.loader.systemd-boot.enable = false;
@@ -123,6 +124,8 @@
   services.gvfs.enable = true;
   programs.xwayland.enable = true;
   programs.git.enable = true;
+  #Luatools
+  programs.nix-crab.slssteam-moon.enable = true;
   programs.steam.enable = true;
   services.flatpak.enable = true;
   programs.zsh.enable = true;
