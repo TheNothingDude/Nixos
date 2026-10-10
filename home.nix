@@ -87,7 +87,6 @@
       dotnet-sdk_8
       xdg-user-dirs
       xdg-user-dirs-gtk
-      kdePackages.partitionmanager
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

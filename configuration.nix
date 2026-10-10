@@ -8,7 +8,7 @@
   # --- Bootloader (GRUB) ---
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";  
   boot.loader.grub = {
     enable = true;
     device = "nodev";
@@ -124,6 +124,7 @@
   programs.steam.enable = true;
   services.flatpak.enable = true;
   programs.zsh.enable = true;
+  programs.partition-manager.enable = true;
   # --- Environment Variables ---
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
@@ -133,8 +134,7 @@
   # --- System Packages (CLI tools only) ---
   # GUI apps have been moved to home.nix
   environment.systemPackages = with pkgs; [
-    libnotify
-    jq
+    p7zip
     mate-polkit
     wget
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
