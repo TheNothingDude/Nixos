@@ -119,6 +119,7 @@
   security.polkit.enable = true;
   programs.gamemode.enable = true;
   programs.niri.enable = true;
+  programs.nautilus-open-any-terminal.enable = true;
   programs.xwayland.enable = true;
   programs.git.enable = true;
   programs.steam.enable = true;
@@ -134,6 +135,7 @@
   # --- System Packages (CLI tools only) ---
   # GUI apps have been moved to home.nix
   environment.systemPackages = with pkgs; [
+    nautilus
     p7zip
     mate-polkit
     wget

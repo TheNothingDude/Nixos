@@ -81,7 +81,6 @@
       ghostty
       vesktop
       qbittorrent
-      thunar
       prismlauncher
       faugus-launcher
       dotnet-sdk_8
