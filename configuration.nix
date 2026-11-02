@@ -128,14 +128,20 @@
     wrapperFeatures.gtk = true; # Fixes GTK app integration
     extraPackages = with pkgs; [
       xdg-utils
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-wlr # Important for wlroots/Sway
     ];
   };
   xdg.portal = {
     enable = true;
     wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+      config = {
+        common.default = [ "gtk" ];
+        sway = {
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.Screencast" = [ "wlr" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+      };
+    };
   };
   programs.nautilus-open-any-terminal.enable = true;
   services.gvfs.enable = true;
