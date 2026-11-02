@@ -2,9 +2,6 @@
 
 {
 
-  imports = [
-    inputs.nix-crab.homeModules.default
-  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "helium";
@@ -40,24 +37,10 @@
 
   #Required session variables to prevent broken textures/missing assets
 
-  xdg = {
-    enable = true;
-    portal = {
-      enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gnome ]; # Essential for Noctalia's Libadwaita color scheming
-      config.common.default = "*";
-    };
-    mimeApps = {
-      enable = true;
       
-      defaultApplications = {
-      };
-    };
-  };
 
   # Explicitly tell CLI tools and wrappers to launch Vivaldi
   home.sessionVariables = {
-    BROWSER = "vivaldi-stable";
     QT_QPA_PLATFORMTHEME = "qt6ct";
   };
 
@@ -73,9 +56,9 @@
   # environment.
   programs.fzf.enable = true;
   home.packages = with pkgs; [
-      vivaldi
+      kitty
+      firefox  
       vscode
-      ghostty
       vesktop
       qbittorrent
       prismlauncher

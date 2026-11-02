@@ -8,7 +8,7 @@
   # --- Bootloader (GRUB) ---
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "efi";  
+  boot.loader.efi.efiSysMountPoint = "/boot";  
   boot.loader.grub = {
     enable = true;
     device = "nodev";
@@ -125,6 +125,7 @@
   programs.gamemode.enable = true;
   programs.sway = {
     enable = true;
+    package = pkgs.swayfx;
     wrapperFeatures.gtk = true; # Fixes GTK app integration
     extraPackages = with pkgs; [
       xdg-utils
@@ -133,13 +134,18 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
+    wlr.settings.screencast = {
+      chooser_type = "dmenu";
+      chooser_cmd = "${pkgs.fuzzel}/bin/fuzzel --dmenu";
+    };
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
       config = {
         common.default = [ "gtk" ];
         sway = {
-        default = [ "gtk" ];
-        "org.freedesktop.impl.portal.Screencast" = [ "wlr" ];
-        "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+          default = [ "gtk" ];
+          "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+          "org.freedesktop.impl.portal.Screencast" = [ "wlr" ];
+          "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
       };
     };
   };
@@ -150,6 +156,7 @@
   programs.steam.enable = true;
   services.flatpak.enable = true;
   programs.zsh.enable = true;
+  programs.zsh.enableGlobalCompInit = false;
   programs.partition-manager.enable = true;
   # --- Environment Variables ---
   environment.sessionVariables = {
@@ -161,7 +168,8 @@
 
   # GUI apps have been moved to home.nix
   environment.systemPackages = with pkgs; [
-    qt6ct
+    fuzzel
+    qt6Packages.qt6ct
     nwg-look
     nautilus
     p7zip
