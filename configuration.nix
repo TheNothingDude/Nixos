@@ -4,18 +4,17 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    inputs.nix-crab.nixosModules.default
   ];
   # --- Bootloader (GRUB) ---
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";  
+  boot.loader.efi.efiSysMountPoint = "efi";  
   boot.loader.grub = {
     enable = true;
     device = "nodev";
     efiSupport = true; # Set to false if using Legacy BIOS
     useOSProber = true;
-    configurationLimit = 2; 
+    configurationLimit = 10; 
   };
   services.fstrim.enable = true;
   zramSwap = {
@@ -25,18 +24,18 @@
     algorithm = "zstd"; # Compression algorithm (e.g., zstd, lz4, lzo)
   };
   # --- Networking ---
-  networking.hostName = "nixos";
+  networking.hostName = "nix-uwu";
   networking.networkmanager.enable = true;
 
   # --- Time & Locale ---
   time.timeZone = "Europe/Budapest";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "hu_HU.UTF-8";
-    LC_IDENTIFICATION = "hu_HU.UTF-8";
-    LC_MEASUREMENT = "hu_HU.UTF-8";
-    LC_MONETARY = "hu_HU.UTF-8";
-    LC_NAME = "hu_HU.UTF-8";
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
     LC_NUMERIC = "hu_HU.UTF-8";
     LC_PAPER = "hu_HU.UTF-8";
     LC_TELEPHONE = "hu_HU.UTF-8";
@@ -68,7 +67,6 @@
 
   services.displayManager = {
     gdm.enable = true;
-    defaultSession = "niri";
   };
   services.printing.enable = false;
 
@@ -125,13 +123,24 @@
   nixpkgs.config.allowUnfree = true;
   security.polkit.enable = true;
   programs.gamemode.enable = true;
-  programs.niri.enable = true;
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true; # Fixes GTK app integration
+    extraPackages = with pkgs; [
+      xdg-utils
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr # Important for wlroots/Sway
+    ];
+  };
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
   programs.nautilus-open-any-terminal.enable = true;
   services.gvfs.enable = true;
   programs.xwayland.enable = true;
   programs.git.enable = true;
-  #Luatools
-  programs.nix-crab.slssteam-moon.enable = true;
   programs.steam.enable = true;
   services.flatpak.enable = true;
   programs.zsh.enable = true;

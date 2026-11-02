@@ -5,8 +5,6 @@
   imports = [
     inputs.nix-crab.homeModules.default
   ];
-    programs.nix-crab.slssteam.manageConfig = false;
-    programs.nix-crab.luatools.enable = true;
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "helium";
@@ -53,13 +51,6 @@
       enable = true;
       
       defaultApplications = {
-        # Vivaldi Browser defaults
-        "text/html" = [ "vivaldi-stable.desktop" ];
-        "x-scheme-handler/http" = [ "vivaldi-stable.desktop" ];
-        "x-scheme-handler/https" = [ "vivaldi-stable.desktop" ];
-        "x-scheme-handler/about" = [ "vivaldi-stable.desktop" ];
-        "x-scheme-handler/unknown" = [ "vivaldi-stable.desktop" ];
-        "inode/directory" = [ "thunar.desktop" ];
       };
     };
   };
