@@ -149,10 +149,14 @@
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
     SDL_VIDEODRIVER = "wayland";
+      GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
+      QT_QPA_PLATFORMTHEME = "qt6ct";
   };
 
   # GUI apps have been moved to home.nix
   environment.systemPackages = with pkgs; [
+    qt6ct
+    nwg-look
     nautilus
     p7zip
     mate-polkit
