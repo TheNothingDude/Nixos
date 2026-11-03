@@ -37,9 +37,9 @@
     LC_MONETARY = "en_US.UTF-8";
     LC_NAME = "en_US.UTF-8";
     LC_NUMERIC = "hu_HU.UTF-8";
-    LC_PAPER = "hu_HU.UTF-8";
-    LC_TELEPHONE = "hu_HU.UTF-8";
-    LC_TIME = "hu_HU.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
   };
   # ---------- Services -----------
     systemd.user.services.mate-polkit-authentication-agent-1 = {
@@ -162,6 +162,7 @@
   # --- Environment Variables ---
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+    NIXOS_OZONE_WL = "1";
   };
 
   environment.systemPackages = with pkgs; [
