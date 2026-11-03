@@ -1,4 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -8,19 +13,19 @@
   # --- Bootloader (GRUB) ---
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot";  
+  boot.loader.efi.efiSysMountPoint = "/boot";
   boot.loader.grub = {
     enable = true;
     device = "nodev";
     efiSupport = true; # Set to false if using Legacy BIOS
     useOSProber = true;
-    configurationLimit = 10; 
+    configurationLimit = 10;
   };
   services.fstrim.enable = true;
   zramSwap = {
     enable = true;
     memoryPercent = 50; # Maximum percentage of physical RAM to use for ZRAM
-    priority = 100;     # Swap priority (higher number means it is used first)
+    priority = 100; # Swap priority (higher number means it is used first)
     algorithm = "zstd"; # Compression algorithm (e.g., zstd, lz4, lzo)
   };
   # --- Networking ---
@@ -42,19 +47,19 @@
     LC_TIME = "en_US.UTF-8";
   };
   # ---------- Services -----------
-    systemd.user.services.mate-polkit-authentication-agent-1 = {
-    description = "MATE Polkit Authentication Agent";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.mate-polkit}/libexec/polkit-mate-authentication-agent-1";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
-    };
-  };
+  #    systemd.user.services.mate-polkit-authentication-agent-1 = {
+  #    description = "MATE Polkit Authentication Agent";
+  #    wantedBy = [ "graphical-session.target" ];
+  #    wants = [ "graphical-session.target" ];
+  #    after = [ "graphical-session.target" ];
+  #    serviceConfig = {
+  #      Type = "simple";
+  #      ExecStart = "${pkgs.mate-polkit}/libexec/polkit-mate-authentication-agent-1";
+  #      Restart = "on-failure";
+  #      RestartSec = 1;
+  #      TimeoutStopSec = 10;
+  #    };
+  #  };
   # --- Display, Audio & Hardware ---
   services.xserver = {
     enable = true;
@@ -100,7 +105,10 @@
     isNormalUser = true;
     description = "Helium";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   # --- Home Manager ---
@@ -123,6 +131,7 @@
   nixpkgs.config.allowUnfree = true;
   security.polkit.enable = true;
   programs.gamemode.enable = true;
+  programs.niri.enable = true;
   programs.sway = {
     enable = true;
     package = pkgs.swayfx;
@@ -138,20 +147,27 @@
       chooser_type = "dmenu";
       chooser_cmd = "${pkgs.fuzzel}/bin/fuzzel --dmenu";
     };
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-      config = {
-        common.default = [ "gtk" ];
-        sway = {
-          default = [ "gtk" ];
-          "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-          "org.freedesktop.impl.portal.Screencast" = [ "wlr" ];
-          "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+    ];
+    config = {
+      common.default = [ "gtk" ];
+      niri = {
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
+      };
+      sway = {
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+        "org.freedesktop.impl.portal.Screencast" = [ "wlr" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
       };
     };
   };
   programs.nautilus-open-any-terminal.enable = true;
   programs.nautilus-open-any-terminal.terminal = "kitty";
   services.gvfs.enable = true;
+  services.gnome.gnome-keyring.enable = true;
   programs.xwayland.enable = true;
   programs.git.enable = true;
   programs.steam.enable = true;
@@ -166,6 +182,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    xwayland
     fuzzel
     qt6Packages.qt6ct
     nwg-look
@@ -185,7 +202,10 @@
 
   # --- Nix Settings & Garbage Collection ---
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     auto-optimise-store = true;
   };
 

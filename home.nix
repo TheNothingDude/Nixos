@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
 
@@ -6,9 +11,8 @@
   # manage.
   home.username = "helium";
   home.homeDirectory = "/home/helium";
-   
 
-  nixpkgs.config.allowUnfree = true; 
+  nixpkgs.config.allowUnfree = true;
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -17,6 +21,7 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
+  services.polkit-gnome.enable = true;
   gtk = {
     enable = true;
     theme = {
@@ -33,12 +38,10 @@
   qt = {
     enable = true;
     platformTheme.name = "qt6ct"; # Explicitly binds Qt back to the GTK layers
-    style.name = "adwaita-dark"; 
+    style.name = "adwaita-dark";
   };
 
   #Required session variables to prevent broken textures/missing assets
-
-      
 
   home.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
@@ -46,27 +49,26 @@
 
   #cursor
   home.pointerCursor = {
-  enable = true;
-  x11.enable = true;
-  package = pkgs.oreo-cursors-plus;
-  name = "oreo_spark_pink_cursors";
-  size = 24; # Adjust size (e.g., 24, 32, 48) if needed
-};
+    enable = true;
+    x11.enable = true;
+    package = pkgs.oreo-cursors-plus;
+    name = "oreo_spark_pink_cursors";
+    size = 24; # Adjust size (e.g., 24, 32, 48) if needed
+  };
   # The home.packages option allows you to install Nix packages into your
   # environment.
   programs.fzf.enable = true;
   home.packages = with pkgs; [
-      kitty
-      firefox  
-      vscode
-      vesktop
-      discord
-      qbittorrent
-      prismlauncher
-      faugus-launcher
-      dotnet-sdk_8
-      xdg-user-dirs
-      xdg-user-dirs-gtk
+    kitty
+    firefox
+    vscode
+    vesktop
+    discord
+    qbittorrent
+    prismlauncher
+    dotnet-sdk_8
+    xdg-user-dirs
+    xdg-user-dirs-gtk
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
