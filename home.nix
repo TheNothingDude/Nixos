@@ -6,8 +6,9 @@
   # manage.
   home.username = "helium";
   home.homeDirectory = "/home/helium";
+   
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true; 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -39,7 +40,6 @@
 
       
 
-  # Explicitly tell CLI tools and wrappers to launch Vivaldi
   home.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
   };
@@ -60,6 +60,7 @@
       firefox  
       vscode
       vesktop
+      discord
       qbittorrent
       prismlauncher
       faugus-launcher
