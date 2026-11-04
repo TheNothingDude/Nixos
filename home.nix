@@ -59,10 +59,10 @@
   # environment.
   programs.fzf.enable = true;
   home.packages = with pkgs; [
+    zed-editor
     kitty
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
     firefox
-    vscode
     vesktop
     discord
     qbittorrent
