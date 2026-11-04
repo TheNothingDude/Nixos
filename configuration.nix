@@ -176,6 +176,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    fzf
+    eza
     xwayland
     fuzzel
     qt6Packages.qt6ct
