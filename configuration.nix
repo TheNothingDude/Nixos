@@ -131,6 +131,8 @@
   # --- Programs & Features ---
   nixpkgs.config.allowUnfree = true;
   security.polkit.enable = true;
+  #dynamically linked support
+  programs.nix-ld.enable = true;
   programs.gamemode.enable = true;
   programs.niri.enable = true;
   programs.mango.enable = true;
