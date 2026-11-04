@@ -67,7 +67,7 @@
     discord
     qbittorrent
     prismlauncher
-    dotnet-sdk_8
+    dotnet-sdk_10
     xdg-user-dirs
     xdg-user-dirs-gtk
     # # Adds the 'hello' command to your environment. It prints a friendly
