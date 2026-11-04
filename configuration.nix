@@ -72,7 +72,7 @@
   };
 
   services.displayManager = {
-    gdm.enable = true;
+    gdm.enable = false;
   };
   services.printing.enable = false;
 
