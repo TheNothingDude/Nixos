@@ -9,6 +9,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    inputs.mangowm.nixosModules.mango
   ];
   # --- Bootloader (GRUB) ---
   boot.loader.systemd-boot.enable = false;
@@ -132,14 +133,7 @@
   security.polkit.enable = true;
   programs.gamemode.enable = true;
   programs.niri.enable = true;
-  programs.sway = {
-    enable = true;
-    package = pkgs.swayfx;
-    wrapperFeatures.gtk = true; # Fixes GTK app integration
-    extraPackages = with pkgs; [
-      xdg-utils
-    ];
-  };
+  programs.mango.enable = true;
   xdg.portal = {
     enable = true;
     wlr.enable = true;
