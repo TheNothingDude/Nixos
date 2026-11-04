@@ -60,6 +60,7 @@
   programs.fzf.enable = true;
   home.packages = with pkgs; [
     kitty
+    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
     firefox
     vscode
     vesktop
