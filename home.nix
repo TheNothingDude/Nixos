@@ -12,7 +12,6 @@
   home.username = "helium";
   home.homeDirectory = "/home/helium";
 
-  nixpkgs.config.allowUnfree = true;
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -21,7 +20,6 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
-  services.polkit-gnome.enable = true;
   gtk = {
     enable = true;
     theme = {
@@ -122,5 +120,5 @@
   #
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  #programs.home-manager.enable = true;
 }

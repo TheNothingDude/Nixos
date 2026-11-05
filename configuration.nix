@@ -72,7 +72,6 @@
   };
 
   services.displayManager = {
-    gdm.enable = false;
   };
   services.printing.enable = false;
 
@@ -114,6 +113,8 @@
 
   # --- Home Manager ---
   home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
     backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
     users = {
@@ -134,7 +135,6 @@
   #dynamically linked support
   programs.nix-ld.enable = true;
   programs.gamemode.enable = true;
-  programs.niri.enable = true;
   programs.mango.enable = true;
   xdg.portal = {
     enable = true;
@@ -150,7 +150,11 @@
     config = {
       common.default = [ "gtk" ];
       niri = {
-        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
+        default = [
+          "gnome"
+          "gtk"
+        ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
       };
       sway = {
         default = [ "gtk" ];
@@ -179,7 +183,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    fzf
     eza
     xwayland
     fuzzel
@@ -205,8 +208,8 @@
       "nix-command"
       "flakes"
     ];
-    auto-optimise-store = true;
   };
+  nix.optimise.automatic = true;
   programs.nh = {
     enable = true;
     flake = "/etc/nixos";
