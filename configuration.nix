@@ -179,7 +179,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    floorp-bin
     fzf
     eza
     xwayland

@@ -59,12 +59,13 @@
   # environment.
   programs.fzf.enable = true;
   home.packages = with pkgs; [
+    floorp-bin
+    rustc
+    cargo
     zed-editor
     kitty
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
-    firefox
     vesktop
-    discord
     qbittorrent
     prismlauncher
     dotnet-sdk_10
