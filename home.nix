@@ -11,14 +11,6 @@
   # manage.
   home.username = "helium";
   home.homeDirectory = "/home/helium";
-
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
   gtk = {
     enable = true;
@@ -39,8 +31,6 @@
     style.name = "adwaita-dark";
   };
 
-  #Required session variables to prevent broken textures/missing assets
-
   home.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt6ct";
   };
@@ -53,8 +43,6 @@
     name = "oreo_spark_pink_cursors";
     size = 24; # Adjust size (e.g., 24, 32, 48) if needed
   };
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   programs.fzf.enable = true;
   home.packages = with pkgs; [
     floorp-bin
