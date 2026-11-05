@@ -1,11 +1,4 @@
 {
-  inputs,
-  config,
-  pkgs,
-  ...
-}:
-
-{
   services.xserver = {
     enable = true;
     videoDrivers = [ "amdgpu" ];
