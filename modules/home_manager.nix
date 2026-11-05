@@ -12,7 +12,7 @@
     backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "helium" = import ./home.nix;
+      "helium" = import ../home.nix;
     };
   };
 }
