@@ -1,11 +1,4 @@
 {
-  inputs,
-  config,
-  pkgs,
-  ...
-}:
-
-{
   programs.gamemode.enable = true;
   security.polkit.enable = true;
   programs.nix-ld.enable = true;

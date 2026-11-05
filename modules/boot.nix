@@ -1,11 +1,4 @@
 {
-  inputs,
-  config,
-  pkgs,
-  ...
-}:
-
-{
   # --- Bootloader (GRUB) ---
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
