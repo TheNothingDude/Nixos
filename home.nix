@@ -62,7 +62,6 @@
     cargo
     zed-editor
     kitty
-    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
     vesktop
     qbittorrent
     prismlauncher

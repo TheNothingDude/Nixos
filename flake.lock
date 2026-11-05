@@ -120,11 +120,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793890820,
-        "narHash": "sha256-TJRLDAGn3hlHpmpdKYRR04eFmohgki7LvdFDqAOZwTk=",
+        "lastModified": 1793898392,
+        "narHash": "sha256-mck4Yolc40m8Km4YqMeSDwjk/nKGEnLm/MU0G4OXgf0=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "05cba915ed0d70057fd79b6d9840b3a4a10c0c4b",
+        "rev": "c2215c19026865eda3bc11717cb68f0e8ec20f5e",
         "type": "github"
       },
       "original": {
@@ -138,8 +138,7 @@
         "home-manager": "home-manager",
         "mangowm": "mangowm",
         "nixpkgs": "nixpkgs",
-        "noctalia": "noctalia",
-        "zen-browser": "zen-browser"
+        "noctalia": "noctalia"
       }
     },
     "scenefx": {
@@ -177,29 +176,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default-linux",
-        "type": "github"
-      }
-    },
-    "zen-browser": {
-      "inputs": {
-        "home-manager": [
-          "home-manager"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1793879729,
-        "narHash": "sha256-ZoqGR29kJSlqsgHyMKWjv3zEi6hrxDn+v5nwYntle+w=",
-        "owner": "0xc000022070",
-        "repo": "zen-browser-flake",
-        "rev": "9107affa07d1213f0e733ba62235bf23453cfb98",
-        "type": "github"
-      },
-      "original": {
-        "owner": "0xc000022070",
-        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
