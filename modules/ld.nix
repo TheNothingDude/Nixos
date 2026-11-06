@@ -14,5 +14,7 @@
     cairo
     glib
     gdk-pixbuf
+    atk
+    adwaita-icon-theme
   ];
 }
