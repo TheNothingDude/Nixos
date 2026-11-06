@@ -48,8 +48,6 @@
     hydralauncher
     python3
     floorp-bin
-    rustc
-    cargo
     zed-editor
     kitty
     vesktop
