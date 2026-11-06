@@ -11,5 +11,8 @@
     libsoup_3
     gtk3
     pango
+    cairo
+    glib
+    gdk-pixbuf
   ];
 }
