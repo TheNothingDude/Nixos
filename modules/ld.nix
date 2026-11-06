@@ -10,5 +10,6 @@
     webkitgtk_4_1
     libsoup_3
     gtk3
+    pango
   ];
 }
