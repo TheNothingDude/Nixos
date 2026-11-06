@@ -7,6 +7,7 @@
 {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    vlc
     stdenv.cc
     eza
     xwayland
