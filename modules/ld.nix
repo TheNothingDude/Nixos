@@ -7,31 +7,5 @@
 {
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    webkitgtk_4_1
-    libsoup_3
-    gtk3
-    pango
-    cairo
-    glib
-    gdk-pixbuf
-    atk
-    adwaita-icon-theme
-    harfbuzz
-    freetype
-    fontconfig
-    dbus
-    zlib
-    libx11
-    libxcursor
-    libxrandr
-    libxi
-    libxext
-    libxdamage
-    libxfixes
-    libxcomposite
-    libxrender
-    libxtst
-    libGL
-    libGL
   ];
 }
