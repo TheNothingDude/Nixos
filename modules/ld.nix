@@ -16,5 +16,21 @@
     gdk-pixbuf
     atk
     adwaita-icon-theme
+    harfbuzz
+    freetype
+    fontconfig
+    dbus
+    zlib
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXrandr
+    xorg.libXi
+    xorg.libXext
+    xorg.libXdamage
+    xorg.libXfixes
+    xorg.libXcomposite
+    xorg.libXrender
+    xorg.libXtst
+    libGL
   ];
 }
