@@ -1,4 +1,12 @@
 {
+  inputs,
+  ...
+}:
+
+{
+  imports = [ inputs.umbriel.nixosModules.default ];
+
+  programs.umbriel.enable = true;
   programs.gamemode.enable = true;
   security.polkit.enable = true;
   programs.nix-ld.enable = true;
