@@ -21,16 +21,17 @@
     fontconfig
     dbus
     zlib
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXrandr
-    xorg.libXi
-    xorg.libXext
-    xorg.libXdamage
-    xorg.libXfixes
-    xorg.libXcomposite
-    xorg.libXrender
-    xorg.libXtst
+    libx11
+    libxcursor
+    libxrandr
+    libxi
+    libxext
+    libxdamage
+    libxfixes
+    libxcomposite
+    libxrender
+    libxtst
+    libGL
     libGL
   ];
 }
