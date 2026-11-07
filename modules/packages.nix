@@ -19,6 +19,7 @@
     mangohud
     protonplus
     fastfetch
+    nitch
     vim
     git
     gh
