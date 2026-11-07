@@ -18,5 +18,4 @@
   services.flatpak.enable = true;
   programs.zsh.enable = true;
   programs.zsh.enableGlobalCompInit = false;
-  programs.partition-manager.enable = true;
 }

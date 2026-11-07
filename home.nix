@@ -55,7 +55,6 @@
     prismlauncher
     dotnet-sdk_10
     xdg-user-dirs
-    xdg-user-dirs-gtk
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

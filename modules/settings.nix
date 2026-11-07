@@ -14,4 +14,9 @@
       extraArgs = "--keep-since 7d --keep 5";
     };
   };
+  documentation.nixos.enable = false;
+  documentation.doc.enable = false;
+  documentation.info.enable = false;
+  environment.defaultPackages = [ ]; # perl, rsync, strace
+  boot.enableContainers = false;
 }
