@@ -31,7 +31,7 @@
     qt6Packages.qt6ct
     p7zip
     wget
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    noctalia
     mangohud
     fastfetch
     nitch
