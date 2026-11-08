@@ -45,6 +45,8 @@
   };
   programs.fzf.enable = true;
   home.packages = with pkgs; [
+    nixd
+    nil
     hydralauncher
     python3
     floorp-bin

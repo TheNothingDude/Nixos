@@ -1,5 +1,6 @@
 {
   inputs,
+  pkgs,
   ...
 }:
 
@@ -18,4 +19,26 @@
   services.flatpak.enable = true;
   programs.zsh.enable = true;
   programs.zsh.enableGlobalCompInit = false;
+  nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = with pkgs; [
+    dust
+    vlc
+    eza
+    xwayland
+    fuzzel
+    qt6Packages.qt6ct
+    p7zip
+    wget
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    mangohud
+    protonplus
+    fastfetch
+    nitch
+    vim
+    git
+    gh
+    unzip
+    unrar
+  ];
 }
