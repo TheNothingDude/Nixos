@@ -45,6 +45,7 @@
   };
   programs.fzf.enable = true;
   home.packages = with pkgs; [
+    protonup-rs
     nixd
     nil
     hydralauncher
