@@ -45,8 +45,9 @@
   };
   programs.fzf.enable = true;
   home.packages = with pkgs; [
-    protonup-rs
+    nodejs
     nixd
+    protonplus
     nil
     hydralauncher
     python3

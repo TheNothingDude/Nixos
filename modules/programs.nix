@@ -33,7 +33,6 @@
     wget
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     mangohud
-    protonplus
     fastfetch
     nitch
     vim
