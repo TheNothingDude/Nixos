@@ -4,6 +4,8 @@
 }:
 
 {
+  programs.umbriel.enable = true;
+  programs.niri.enable = true;
   programs.thunar.enable = true;
   programs.gamemode.enable = true;
   security.polkit.enable = true;
@@ -21,9 +23,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    niri
     xwayland-satellite
-    umbriel
     dust
     vlc
     eza
