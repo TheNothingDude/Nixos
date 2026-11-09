@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   ...
 }:
@@ -23,6 +22,7 @@
 
   environment.systemPackages = with pkgs; [
     mango
+    umbriel
     dust
     vlc
     eza
