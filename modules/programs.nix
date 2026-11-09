@@ -21,7 +21,8 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    mango
+    niri
+    xwayland-satellite
     umbriel
     dust
     vlc
