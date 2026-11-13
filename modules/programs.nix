@@ -23,6 +23,8 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    clang
+    clang-tools
     gcc
     xwayland-satellite
     dust
