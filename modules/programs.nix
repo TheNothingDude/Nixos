@@ -23,6 +23,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    gcc
     xwayland-satellite
     dust
     vlc
