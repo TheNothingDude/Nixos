@@ -25,7 +25,6 @@
   environment.systemPackages = with pkgs; [
     clang
     clang-tools
-    gcc
     xwayland-satellite
     dust
     vlc
