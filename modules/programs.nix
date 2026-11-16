@@ -40,6 +40,7 @@
     nitch
     vim
     git
+    gh
     unzip
     unrar
   ];
