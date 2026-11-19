@@ -20,6 +20,7 @@
   services.flatpak.enable = true;
   programs.zsh.enable = true;
   programs.zsh.enableGlobalCompInit = false;
+  services.udisks2.enable = true;
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
