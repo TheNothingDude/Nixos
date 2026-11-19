@@ -23,6 +23,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    gnome-disk-utility
     clang
     clang-tools
     xwayland-satellite
