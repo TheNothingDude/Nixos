@@ -23,6 +23,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    winboat
     clang
     clang-tools
     xwayland-satellite
