@@ -28,7 +28,6 @@
   qt = {
     enable = true;
     platformTheme.name = "qt6ct"; # Explicitly binds Qt back to the GTK layers
-    style.name = "adwaita-dark";
   };
 
   home.sessionVariables = {
